@@ -6,17 +6,15 @@ from pylidc.utils import consensus
 from PIL import Image
 import numpy as np
 
-# Read the configuration file
-# parser = ConfigParser()
-# parser.read('lung.conf')
+
 
 # Get Directory setting
 DICOM_DIR = "/opt/jupyterlab/Datasets/CT/Lungs/LIDC-IDRI/manifest-1600709154662/LIDC-IDRI" #parser.get('prepare_dataset','LIDC_DICOM_PATH')
-MASK_DIR = "./masks_final_0consensus/Mask" #parser.get('prepare_dataset','MASK_PATH')
+MASK_DIR = "./masks_final_0consensus/Mask" 
 
 # Hyper Parameter setting for pylidc
-confidence_level = 0.01 #parser.getfloat('pylidc','confidence_level')
-padding = 512# parser.getint('pylidc','padding_size')
+confidence_level = 0.01 
+padding = 512
 
 # Ensure the mask directory exists
 if not os.path.exists(MASK_DIR):
@@ -28,7 +26,7 @@ LIDC_IDRI_list.sort()
 #LIDC_IDRI_list =  ['LIDC-IDRI-0049']
 
 for patient in LIDC_IDRI_list:
-    pid = patient #LIDC-IDRI-0001~
+    pid = patient 
     scan = pl.query(pl.Scan).filter(pl.Scan.patient_id == pid).first()
     nodules_annotation = scan.cluster_annotations()
     vol = scan.to_volume()
