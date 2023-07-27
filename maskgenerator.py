@@ -9,7 +9,7 @@ import numpy as np
 
 
 # Get Directory setting
-DICOM_DIR = "/opt/jupyterlab/Datasets/CT/Lungs/LIDC-IDRI/manifest-1600709154662/LIDC-IDRI" #parser.get('prepare_dataset','LIDC_DICOM_PATH')
+DICOM_DIR = "/opt/jupyterlab/Datasets/CT/Lungs/LIDC-IDRI/manifest-1600709154662/LIDC-IDRI" 
 MASK_DIR = "./masks_final_0consensus/Mask" 
 
 # Hyper Parameter setting for pylidc
